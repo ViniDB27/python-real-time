@@ -2,7 +2,6 @@ from repository.database import db
 
 class Payment(db.Model):
     __tablename__ = 'payments'
-    bank_payment_id
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Float, nullable=False)
     paid = db.Column(db.Boolean, default=False) 
