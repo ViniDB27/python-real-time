@@ -2,7 +2,7 @@ from repository.database import db
 
 class Payment(db.Model):
     __tablename__ = 'payments'
-    
+    bank_payment_id
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Float, nullable=False)
     paid = db.Column(db.Boolean, default=False) 
@@ -18,7 +18,7 @@ class Payment(db.Model):
             'id': self.id,
             'value': self.value,
             'paid': self.paid,
-            'bank_payment_id': self.bank_payment_id,
+            '': self.bank_payment_id,
             'qrcode': self.qrcode,
             'expiration_date': self.expiration_date.isoformat() if self.expiration_date else None
         }
